@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:59:03 by tlupu             #+#    #+#             */
-/*   Updated: 2024/07/11 13:27:41 by msacaliu         ###   ########.fr       */
+/*   Updated: 2024/07/11 14:44:11 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,27 @@ void	skip_word_quotes(t_dat *indexes, t_word_info *word_info, char *str)
 	word_info->word[indexes->j] = str[indexes->i];
 }
 
+void	*ft_calloc(size_t count, size_t size)
+{
+	size_t	total;
+	void	*ptr;
+
+	total = count * size;
+	ptr = malloc(total);
+	if (ptr == NULL)
+		return (NULL);
+	else
+		memset(ptr, 0, total);
+	return (ptr);
+}
+
 int	allocate_memory(char *str, char c, t_word_info *word_info)
 {
 	int	alloc;
 
 	alloc = allocate_for_strings(str, c);
-	word_info->word = (char *)malloc(sizeof(char) * (alloc + 1));
+	word_info->word = (char *)ft_calloc(sizeof(char) * (alloc + 1),
+			ft_strlen(str));
 	return (alloc);
 }
 
@@ -39,7 +54,7 @@ void	process_string(char *str, t_dat *indexes, t_word_info *word_info,
 	while (str[indexes->i] != '\0' && (indexes->is_quotes
 			|| str[indexes->i] != c))
 	{
-		if (str[indexes->i] == '"' || str[indexes->i] == '\'')
+		if (str[indexes->i] == '\"' || str[indexes->i] == '\'')
 		{
 			skip_word_quotes(indexes, word_info, str);
 			continue ;
@@ -55,7 +70,7 @@ void	process_string(char *str, t_dat *indexes, t_word_info *word_info,
 			break ;
 		}
 		else if (str[indexes->i] != '\0' && (indexes->is_quotes
-				|| str[indexes->i] != c) && str[indexes->i] != '"')
+				|| str[indexes->i] != c) && str[indexes->i] != '\"')
 			word_info->word[indexes->j++] = str[indexes->i++];
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 18:45:08 by msacaliu          #+#    #+#             */
-/*   Updated: 2024/07/10 22:36:59 by msacaliu         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:11:58 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ void	process_command(char **commands, int i, t_env_var *vars)
 				vars->exit_status = 0;
 			}
 			else
-			{
 				print_variable_value(commands[i], vars);
-			}
 		}
 		else
 		{

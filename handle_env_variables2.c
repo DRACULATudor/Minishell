@@ -133,10 +133,10 @@ char	**refill_arr(t_env_var *old_env_vars, t_env_var *new_env, char *key)
 t_env_var	*delete_env_var(t_env_var *old_env_vars, char *key)
 {
 	int			i;
-	// int			j;
+	int			j;
 	t_env_var	*new_env;
 
-	// j = 0;
+	j = 0;
 	new_env = malloc(sizeof(t_env_var));
 	if (!new_env)
 		return (NULL);

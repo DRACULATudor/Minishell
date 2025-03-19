@@ -1,5 +1,5 @@
 CC = gcc
-FLAGS = -Wall -Wextra -g #-Werror
+FLAGS = -Wall -Wextra -Werror -g
 #-fsanitize=address
 SRC = main.c handle_ctrl_commands.c handle_line_input.c  built_ins.c \
 	built_ins2.c built_ins3.c handle_env_variables2.c utils/helper_functions.c\

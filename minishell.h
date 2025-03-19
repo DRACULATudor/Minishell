@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 17:18:10 by msacaliu          #+#    #+#             */
-/*   Updated: 2024/07/10 23:34:40 by msacaliu         ###   ########.fr       */
+/*   Updated: 2024/07/11 14:43:14 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -259,6 +259,7 @@ void				input_file(char *input_file);
 void				free_exec_args(char *path, char **argv);
 t_env_var			*remove_env_var(char *command, t_env_var *env_vars);
 int					ft_strcmp(char *s1, char *s2);
+void				*ft_memset(void *b, int c, size_t len);
 // char				*ft_strchr(char *s, int c);
 
 ///-----------------helper_functions_exec---------

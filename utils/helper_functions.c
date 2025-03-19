@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 19:19:12 by msacaliu          #+#    #+#             */
-/*   Updated: 2024/07/11 12:28:49 by msacaliu         ###   ########.fr       */
+/*   Updated: 2024/07/11 14:44:03 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,20 @@ int	ft_strcmp(char *s1, char *s2)
 		s2++;
 	}
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+}
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned char	*ptr;
+
+	ptr = b;
+	while (len > 0)
+	{
+		*ptr = c;
+		ptr++;
+		len--;
+	}
+	return (b);
 }
 
 // char	*ft_strchr(char *s, int c)
